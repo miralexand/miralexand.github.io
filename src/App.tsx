@@ -12,6 +12,7 @@ import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CommandPalette from "./components/CommandPalette";
+import SpiderEgg from "./components/SpiderEgg";
 
 export default function App() {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -47,6 +48,7 @@ export default function App() {
           open={paletteOpen}
           onClose={() => setPaletteOpen(false)}
         />
+        <SpiderEgg />
       </div>
       <Intro />
     </>

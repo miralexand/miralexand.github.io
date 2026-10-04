@@ -474,7 +474,7 @@ html[data-cyber="on"] .cyber-name {
   to {
     opacity: 1;
     transform: none;
-    filter: blur(0);
+    filter: none;
   }
 }
 .app-enter {
@@ -564,6 +564,63 @@ html[data-cyber="on"] .cyber-name {
   color: var(--muted);
 }
 
+@keyframes legA {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+@keyframes legB {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+.legs-left,
+.legs-right {
+  transform-box: view-box;
+}
+.legs-left {
+  transform-origin: 22px 30px;
+}
+.legs-right {
+  transform-origin: 26px 30px;
+}
+.spider-moving .legs-left {
+  animation: legA 0.2s ease-in-out infinite;
+}
+.spider-moving .legs-right {
+  animation: legB 0.2s ease-in-out infinite;
+}
+
+.spider-pupils {
+  transition: transform 0.1s linear;
+}
+
+@keyframes spiderBobOnce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-18px);
+  }
+  60% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.spider-bob {
+  animation: spiderBobOnce 0.9s ease-in-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -585,7 +642,10 @@ html[data-cyber="on"] .cyber-name {
   .intro-overlay,
   .intro-mark,
   .intro-spinner,
-  .intro-dot {
+  .intro-dot,
+  .spider-bob,
+  .legs-left,
+  .legs-right {
     animation: none;
   }
 }
