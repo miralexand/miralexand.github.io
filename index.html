@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#060609" />
+    <meta
+      name="description"
+      content="Yongzhuo Chen · 全栈开发者 · 项目作品集与联系方式"
+    />
+    <meta property="og:title" content="Yongzhuo Chen · Portfolio" />
+    <meta
+      property="og:description"
+      content="Yongzhuo Chen · 全栈开发者 · 项目作品集与联系方式"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>miralexand · UNIT-01</title>
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var h = new Date().getHours();
+          var auto = h >= 6 && h < 18 ? "light" : "dark";
+          var theme = saved === "light" || saved === "dark" ? saved : auto;
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
