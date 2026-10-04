@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import {
   Binary,
-  Bot,
   CircuitBoard,
   Cog,
   Gauge,
@@ -9,6 +8,7 @@ import {
   MapPin,
   Waypoints,
 } from "lucide-react";
+import Logo from "./Logo";
 import { GithubIcon } from "./icons";
 import TerminalTyper, { type Segment } from "./TerminalTyper";
 import CornerFrame from "./CornerFrame";
@@ -86,10 +86,10 @@ export default function Bento() {
       <div className="grid auto-rows-auto gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Reveal className="sm:col-span-2 lg:row-span-2">
           <Tile className="h-full" corners>
-            <TileLabel icon={<Bot size={14} />}>Identity</TileLabel>
+            <TileLabel icon={<Logo size={14} />}>Identity</TileLabel>
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-line bg-gradient-to-br from-accent/20 to-accent-3/10 text-accent">
-                <Bot size={26} />
+                <Logo size={30} />
               </div>
               <div>
                 <div className="font-mono text-lg font-semibold">

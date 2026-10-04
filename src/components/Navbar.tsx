@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Bot, Menu, Search, X, Zap } from "lucide-react";
+import { Menu, Search, X, Zap } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "./Logo";
 import { GithubIcon } from "./icons";
 import { nav, profile } from "../data";
 import { useCyber } from "../hooks/useCyber";
@@ -47,7 +48,7 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="#home" className="flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-panel text-accent">
-            <Bot size={16} />
+            <Logo size={17} />
           </span>
           <span className="font-mono text-sm font-medium">
             miralexand<span className="text-faint">.github.io</span>

@@ -1,9 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { motion } from "motion/react";
-import { Bot, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import TypeLine from "./TypeLine";
 import CornerFrame from "./CornerFrame";
 import Gargantua from "./Gargantua";
+import Logo from "./Logo";
 import { GithubIcon } from "./icons";
 import { profile } from "../data";
 
@@ -103,7 +104,7 @@ export default function Hero() {
           className="inline-flex items-center gap-3 rounded-md border border-line bg-panel/70 px-4 py-2 font-mono text-[11px] tracking-[0.2em] text-muted uppercase backdrop-blur"
         >
           <span className="flex h-5 w-5 items-center justify-center rounded border border-line text-accent">
-            <Bot size={12} />
+            <Logo size={13} />
           </span>
           [ UNIT-01 · {profile.status} ]
         </motion.div>
