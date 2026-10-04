@@ -48,7 +48,7 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
             <Bot size={16} />
           </span>
           <span className="font-mono text-sm font-medium">
-            miralexand<span className="text-faint">.dev</span>
+            miralexand<span className="text-faint">.github.io</span>
           </span>
         </a>
 

@@ -8,10 +8,15 @@ export default function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
         <div className="text-center sm:text-left">
-          <p className="font-mono text-sm text-ink">
+          <a
+            href={profile.site}
+            target="_blank"
+            rel="noreferrer"
+            className="font-mono text-sm text-ink transition-colors hover:text-accent"
+          >
             {profile.englishName}
-            <span className="text-faint">.dev</span>
-          </p>
+            <span className="text-faint">.github.io</span>
+          </a>
           <p className="mt-1 font-mono text-xs text-faint">
             © {year} {profile.name} · [ SYS.OK ] built with React
           </p>

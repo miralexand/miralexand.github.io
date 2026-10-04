@@ -43,6 +43,7 @@ export const profile = {
   location: "中国 · 贵州",
   email: "dalingaixidelu@163.com",
   github: "https://github.com/miralexand",
+  site: "https://miralexand.github.io/",
   avatarInitials: "M",
   resumeUrl: "",
   status: "ONLINE · 开放合作",
