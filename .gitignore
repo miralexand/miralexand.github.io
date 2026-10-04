@@ -27,3 +27,8 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Secrets
+token.txt
+*.token
+gh_token.txt
