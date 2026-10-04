@@ -32,3 +32,6 @@ dist-ssr
 token.txt
 *.token
 gh_token.txt
+
+# Local notes (not published)
+PLAN.md
