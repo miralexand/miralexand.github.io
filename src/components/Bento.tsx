@@ -83,7 +83,7 @@ export default function Bento() {
       title="关于我"
       description="医院信息科工程师，业余把重复的事交给代码，把想法做成能跑的产品。"
     >
-      <div className="grid auto-rows-auto gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-auto gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Reveal className="sm:col-span-2 lg:row-span-2">
           <Tile className="h-full" corners>
             <TileLabel icon={<Bot size={14} />}>Identity</TileLabel>

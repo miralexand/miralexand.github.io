@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import Background from "./components/Background";
+import CyberFX from "./components/CyberFX";
+import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Quote from "./components/Quote";
 import Marquee from "./components/Marquee";
 import Bento from "./components/Bento";
 import Projects from "./components/Projects";
@@ -25,22 +28,27 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      <Background />
-      <Navbar onOpenPalette={() => setPaletteOpen(true)} />
-      <main>
-        <Hero />
-        <Marquee />
-        <Bento />
-        <Projects />
-        <Timeline />
-        <Contact />
-      </main>
-      <Footer />
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-      />
-    </div>
+    <>
+      <div className="app-enter relative min-h-screen">
+        <Background />
+        <CyberFX />
+        <Navbar onOpenPalette={() => setPaletteOpen(true)} />
+        <main>
+          <Hero />
+          <Quote />
+          <Marquee />
+          <Bento />
+          <Projects />
+          <Timeline />
+          <Contact />
+        </main>
+        <Footer />
+        <CommandPalette
+          open={paletteOpen}
+          onClose={() => setPaletteOpen(false)}
+        />
+      </div>
+      <Intro />
+    </>
   );
 }

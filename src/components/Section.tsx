@@ -21,7 +21,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className="relative mx-auto w-full max-w-5xl px-5 py-14 sm:px-8 sm:py-20"
+      className="relative mx-auto w-full max-w-5xl px-5 py-16 sm:px-8 sm:py-24"
     >
       <motion.div
         initial={{ opacity: 0, y: 24 }}

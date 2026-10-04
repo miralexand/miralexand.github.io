@@ -25,13 +25,21 @@
     <script>
       (function () {
         try {
+          var root = document.documentElement;
           var saved = localStorage.getItem("theme");
           var h = new Date().getHours();
           var auto = h >= 6 && h < 18 ? "light" : "dark";
-          var theme = saved === "light" || saved === "dark" ? saved : auto;
-          document.documentElement.setAttribute("data-theme", theme);
+          root.setAttribute(
+            "data-theme",
+            saved === "light" || saved === "dark" ? saved : auto,
+          );
+          root.setAttribute(
+            "data-cyber",
+            localStorage.getItem("cyber") === "on" ? "on" : "off",
+          );
         } catch (e) {
           document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.setAttribute("data-cyber", "off");
         }
       })();
     </script>

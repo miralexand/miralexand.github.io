@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Bot, Menu, Search, X } from "lucide-react";
+import { Bot, Menu, Search, X, Zap } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { GithubIcon } from "./icons";
 import { nav, profile } from "../data";
+import { useCyber } from "../hooks/useCyber";
 
 const ids = nav.map((n) => n.href.replace("#", ""));
 
@@ -28,6 +29,7 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useActive(ids);
+  const { cyber, toggle: toggleCyber } = useCyber();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -93,6 +95,19 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
             <GithubIcon size={16} />
           </a>
           <ThemeToggle />
+          <button
+            type="button"
+            onClick={toggleCyber}
+            aria-label="彩蛋：赛博朋克模式"
+            title="彩蛋：赛博朋克模式"
+            className={`flex h-6 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+              cyber
+                ? "border-[#00e5ff]/70 text-[#00e5ff] shadow-[0_0_16px_-2px_#00e5ff]"
+                : "border-line text-faint hover:border-[#ff2d95]/60 hover:text-[#ff2d95]"
+            }`}
+          >
+            <Zap size={14} />
+          </button>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

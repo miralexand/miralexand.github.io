@@ -1,3 +1,5 @@
+import Starfield from "./Starfield";
+
 export default function Background() {
   return (
     <div
@@ -6,9 +8,11 @@ export default function Background() {
     >
       <div className="absolute inset-0 grid-bg" />
 
-      <div className="absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[170px]" />
+      <Starfield />
 
-      <div className="absolute -right-40 -bottom-40 h-[26rem] w-[26rem] opacity-50">
+      <div className="absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/5 blur-[170px]" />
+
+      <div className="absolute -right-40 -bottom-40 h-[26rem] w-[26rem] opacity-25">
         <div
           className="radar-sweep h-full w-full rounded-full"
           style={{
