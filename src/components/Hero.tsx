@@ -138,7 +138,7 @@ export default function Hero() {
           custom={3}
           className="mx-auto mt-6 max-w-2xl text-balance leading-relaxed text-muted"
         >
-          {profile.bio}
+          欲买桂花同载酒，终不似少年游
         </motion.p>
 
         <motion.div
