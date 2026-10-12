@@ -146,7 +146,7 @@ export default function Hero() {
             <span className="poem-rule-r h-px w-10 sm:w-16" />
           </div>
           <p className="poem-line text-balance">
-            欲买桂花同载酒，终不似少年游
+            欲买桂花同载酒，终不似，少年游
           </p>
           <span className="poem-seal" aria-hidden="true">
             诗
