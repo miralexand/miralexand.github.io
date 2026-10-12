@@ -131,15 +131,27 @@ export default function Hero() {
           <TypeLine phrases={phrases} />
         </motion.p>
 
-        <motion.p
+        <motion.div
           variants={fade}
           initial="hidden"
           animate="show"
           custom={3}
-          className="mx-auto mt-6 max-w-2xl text-balance leading-relaxed text-muted"
+          className="mx-auto mt-8 flex max-w-2xl flex-col items-center gap-4"
         >
-          欲买桂花同载酒，终不似少年游
-        </motion.p>
+          <div className="flex items-center gap-3 text-accent/70">
+            <span className="poem-rule h-px w-10 sm:w-16" />
+            <span className="font-mono text-[10px] tracking-[0.4em] text-faint uppercase">
+              // verse
+            </span>
+            <span className="poem-rule-r h-px w-10 sm:w-16" />
+          </div>
+          <p className="poem-line text-balance">
+            欲买桂花同载酒，终不似少年游
+          </p>
+          <span className="poem-seal" aria-hidden="true">
+            诗
+          </span>
+        </motion.div>
 
         <motion.div
           variants={fade}
