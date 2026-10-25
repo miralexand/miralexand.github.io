@@ -2,16 +2,17 @@ import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { profile } from "../data";
 
-export default function Footer() {
+export default function Footer({ homeHref }: { homeHref?: string }) {
   const year = new Date().getFullYear();
+  const home = homeHref ?? profile.site;
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 sm:flex-row">
         <div className="text-center sm:text-left">
           <a
-            href={profile.site}
-            target="_blank"
-            rel="noreferrer"
+            href={home}
+            target={homeHref ? undefined : "_blank"}
+            rel={homeHref ? undefined : "noreferrer"}
             className="font-mono text-sm text-ink transition-colors hover:text-accent"
           >
             {profile.englishName}
@@ -40,7 +41,7 @@ export default function Footer() {
             <Mail size={17} />
           </a>
           <a
-            href="#home"
+            href={homeHref ? "#top" : "#home"}
             aria-label="回到顶部"
             className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-muted transition-colors hover:border-accent/50 hover:text-ink"
           >

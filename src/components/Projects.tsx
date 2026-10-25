@@ -1,4 +1,4 @@
-import { ExternalLink, FolderGit2, Star } from "lucide-react";
+import { ArrowUpRight, ExternalLink, FolderGit2, Star } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { projects, profile } from "../data";
 import Section, { Reveal } from "./Section";
@@ -84,19 +84,35 @@ export default function Projects() {
       </div>
 
       <Reveal delay={0.1}>
-        <div className="mt-8 flex justify-center">
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-lg border border-line bg-panel px-5 py-3 font-mono text-sm text-muted transition-colors hover:border-accent/50 hover:text-ink"
-          >
-            <GithubIcon size={16} />
-            在 GitHub 查看全部仓库
-            <span className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="./projects.html"
+              className="group inline-flex items-center gap-2 rounded-lg border border-accent/45 bg-accent/10 px-5 py-3 font-mono text-sm text-accent transition-colors hover:border-accent hover:bg-accent/15"
+            >
+              <FolderGit2 size={16} />
+              查看全部项目
+              <ArrowUpRight
+                size={15}
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 rounded-lg border border-line bg-panel px-5 py-3 font-mono text-sm text-muted transition-colors hover:border-accent/50 hover:text-ink"
+            >
+              <GithubIcon size={16} />
+              GitHub 全部仓库
+              <span className="transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
+            </a>
+          </div>
+          <p className="font-mono text-[11px] text-faint">
+            项目档案每日 02:00 自动同步 GitHub
+          </p>
         </div>
       </Reveal>
     </Section>

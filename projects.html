@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#060609" />
+    <meta
+      name="description"
+      content="miralexand · 项目档案 · GitHub 项目自动同步展示"
+    />
+    <meta property="og:title" content="miralexand · 项目档案" />
+    <meta
+      property="og:description"
+      content="miralexand · 全部项目 · 每日 02:00 自动同步 GitHub"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>miralexand · PROJECT ARCHIVE</title>
+    <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var saved = localStorage.getItem("theme");
+          var h = new Date().getHours();
+          var auto = h >= 6 && h < 18 ? "light" : "dark";
+          root.setAttribute(
+            "data-theme",
+            saved === "light" || saved === "dark" ? saved : auto,
+          );
+          root.setAttribute(
+            "data-cyber",
+            localStorage.getItem("cyber") === "on" ? "on" : "off",
+          );
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.setAttribute("data-cyber", "off");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/projects-main.tsx"></script>
+  </body>
+</html>

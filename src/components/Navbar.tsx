@@ -26,11 +26,18 @@ function useActive(ids: string[]) {
   return active;
 }
 
-export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
+type NavbarProps = {
+  onOpenPalette?: () => void;
+  homeHref?: string;
+};
+
+export default function Navbar({ onOpenPalette, homeHref }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useActive(ids);
   const { cyber, toggle: toggleCyber } = useCyber();
+  const onSubPage = Boolean(homeHref);
+  const hrefFor = (hash: string) => (onSubPage ? `${homeHref}${hash}` : hash);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -46,7 +53,10 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#home" className="flex items-center gap-2.5">
+        <a
+          href={onSubPage ? homeHref : "#home"}
+          className="flex items-center gap-2.5"
+        >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-panel text-accent">
             <Logo size={17} />
           </span>
@@ -58,11 +68,11 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
         <ul className="hidden items-center gap-1 md:flex">
           {nav.map((item) => {
             const id = item.href.replace("#", "");
-            const isActive = active === id;
+            const isActive = !onSubPage && active === id;
             return (
               <li key={item.href}>
                 <a
-                  href={item.href}
+                  href={hrefFor(item.href)}
                   className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                     isActive ? "text-ink" : "text-muted hover:text-ink"
                   }`}
@@ -75,17 +85,19 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
         </ul>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={onOpenPalette}
-            className="hidden items-center gap-2 rounded-lg border border-line bg-panel px-3 py-2 text-xs text-faint transition-colors hover:border-accent-2/50 hover:text-ink sm:flex"
-          >
-            <Search size={13} />
-            <span>搜索</span>
-            <kbd className="rounded border border-line bg-panel-2 px-1.5 py-0.5 font-mono text-[10px]">
-              ⌘K
-            </kbd>
-          </button>
+          {onOpenPalette ? (
+            <button
+              type="button"
+              onClick={onOpenPalette}
+              className="hidden items-center gap-2 rounded-lg border border-line bg-panel px-3 py-2 text-xs text-faint transition-colors hover:border-accent-2/50 hover:text-ink sm:flex"
+            >
+              <Search size={13} />
+              <span>搜索</span>
+              <kbd className="rounded border border-line bg-panel-2 px-1.5 py-0.5 font-mono text-[10px]">
+                ⌘K
+              </kbd>
+            </button>
+          ) : null}
           <a
             href={profile.github}
             target="_blank"
@@ -126,7 +138,7 @@ export default function Navbar({ onOpenPalette }: { onOpenPalette: () => void })
             {nav.map((item) => (
               <li key={item.href}>
                 <a
-                  href={item.href}
+                  href={hrefFor(item.href)}
                   onClick={() => setOpen(false)}
                   className="block rounded-lg px-3 py-3 text-muted transition-colors hover:bg-panel hover:text-ink"
                 >
