@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Briefcase,
+  Clock,
   CornerDownLeft,
   FolderGit2,
   Home,
@@ -37,7 +38,7 @@ export default function CommandPalette({
   open: boolean;
   onClose: () => void;
 }) {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle, follow } = useTheme();
   const [query, setQuery] = useState("");
   const [index, setIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -98,6 +99,13 @@ export default function CommandPalette({
         hint: "theme",
         icon: theme === "dark" ? <Sun size={16} /> : <Moon size={16} />,
         run: () => toggle(),
+      },
+      {
+        id: "theme-auto",
+        label: "主题跟随时间自动切换",
+        hint: "auto · 06:00–18:00 明亮，其余夜间",
+        icon: <Clock size={16} />,
+        run: () => follow(),
       },
     ];
   }, [theme, onClose]); // eslint-disable-line react-hooks/exhaustive-deps
