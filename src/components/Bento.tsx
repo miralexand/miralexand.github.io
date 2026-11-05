@@ -81,7 +81,7 @@ export default function Bento() {
       index="01"
       eyebrow="Unit-01"
       title="关于我"
-      description="医院信息科工程师，业余把重复的事交给代码，把想法做成能跑的产品。"
+      description="医院信息科牛马，白天维持系统别炸，晚上把想法写成能跑的工具。"
     >
       <div className="grid auto-rows-auto gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Reveal className="sm:col-span-2 lg:row-span-2">
@@ -193,8 +193,8 @@ export default function Bento() {
           <Tile className="h-full">
             <TileLabel icon={<Binary size={14} />}>Directive</TileLabel>
             <p className="leading-relaxed text-muted">
-              把 AI 能力带进医疗信息化场景：用自动化流水线处理重复工作，用
-              Web 工具提升科室效率，持续探索「医学 + 工程」的交叉点。
+              把 AI 能力带进医疗信息化场景：让流水线接管繁琐环节，让 Web
+              工具缩短科室的响应链路，持续探索「医学 + 工程」的交叉点。
             </p>
           </Tile>
         </Reveal>

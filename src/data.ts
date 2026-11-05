@@ -39,7 +39,7 @@ export const profile = {
   englishName: "miralexand",
   role: "医院信息科 · 全栈开发者",
   tagline: "把重复的事交给代码，把创意留给自己。",
-  bio: "一名医院信息科工程师，日常工作围绕医疗信息系统运维与内部工具开发，业余专注 Web 全栈、内网运维与 AI 应用自动化，喜欢把想法快速做成能跑的产品并沉淀为开源项目。",
+  bio: "一名医院信息科牛马，日常围着医疗信息系统转，业余专注 Web 全栈、内网运维与 AI 应用自动化，习惯把零散需求打磨成顺手的工具，并沉淀为开源项目。",
   location: "中国 · 贵州",
   email: "dalingaixidelu@163.com",
   github: "https://github.com/miralexand",
@@ -149,7 +149,7 @@ export const projects: Project[] = [
   },
   {
     name: "AI 漫剧自动化流水线",
-    summary: "把 AI 漫剧制作中重复耗时的环节交给 Python 自动完成。",
+    summary: "一部 AI 漫剧从梗概到成片，中间繁琐环节都交给 Python 串起来。",
     description:
       "输入一个故事梗概，自动输出结构化分镜、角色画面、动态视频、配音与最终成片。将 LLM、文生图、图生视频、TTS、FFmpeg 串联成可并行、可复用、有容错的流水线，并可打包为 Windows 可执行程序分发。",
     tags: ["Python", "PySide6", "LLM", "TTS", "FFmpeg"],
@@ -225,10 +225,10 @@ export const timeline: TimelineItem[] = [
     org: "某二甲医院",
     location: "贵州",
     description:
-      "负责医院信息系统的日常运维与内部工具开发，保障业务系统稳定运行。",
+      "守住全院业务系统的稳定运行，也把科室里冒出来的需求做成真正好用的内部工具。",
     highlights: [
       "维护医院核心业务系统的稳定运行，处理日常故障与需求",
-      "面向科室开发内部工具，把重复的运维与报表工作自动化",
+      "面向科室开发小工具，让运维巡检与报表统计少点手工操作",
       "负责内网设备、网络与权限管理，提升信息科响应效率",
     ],
     tags: ["医疗信息化", "系统运维", "内部工具"],

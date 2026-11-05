@@ -111,7 +111,7 @@ export default function Projects() {
             </a>
           </div>
           <p className="font-mono text-[11px] text-faint">
-            项目档案每日 02:00 自动同步 GitHub
+            每天 02:00 刷新一次仓库档案
           </p>
         </div>
       </Reveal>
